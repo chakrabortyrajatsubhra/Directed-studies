@@ -1,4 +1,4 @@
-# CNNC
+# CNN
 # Title: Deep learning for inferring gene relationships from single-cell expression data
 Gene to gene interaction using deep learning
 
