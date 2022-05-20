@@ -1,10 +1,10 @@
 # CNNC
 # Title: Deep learning for inferring gene relationships from single-cell expression data
-Originally, CNNC is short for Convolutional neural network co-expression analysis. Co-expression is just one of the tasks CNNC can      do,   but the name (CNNC) derived from it looks very nice.
+Gene to gene interaction using deep learning
 
-## see `https://www.pnas.org/content/early/2019/12/09/1911536116` for details.
 
-## date: 2019-07-07
+
+
 
 
 ># 1, CNNC
@@ -37,36 +37,25 @@ regulates gene a.
     https://mousescexpression.s3.amazonaws.com/mesc_cell.h5
 >>## 3.5 dendritic single cell RNA-seq:
     https://mousescexpression.s3.amazonaws.com/dendritic_cell.h5
-># 4, Code environment
 
->>## Users need to install the latest python and all the modules required by the code.  
 
-Author's environment is python 3.6.3 in a Linux server which is now running Centos 6.5
-as the underlying OS and Rocks 6.1.1 as the cluster management revision. 
 
-And Author uses theano as the Keras backend in python. 
-
-Author's GPU is GeForce GTX 1080. If the latest theano does not work, please try some older versions.
-
-Although not necessary, we strongly recommend GPU acceleration and conda management for package, dependency and environment to save time. With conda, the total software, package module installation time in Python should be less than one hour.
-
-># 5, Trained model for 
+># 4, Trained model for 
 (see folder for details)
->>## 5.1 KEGG Pathway prediction model
+>>## 4.1 KEGG Pathway prediction model
 
->>## 5.2 Reactome Pathway prediction model
+>>## 4.2 Reactome Pathway prediction model
 
->>## 5.3 GTRD bone TF prediction model
 
-># 6, Train model for a new task
+># 5, Train model for a new task
 
 >>## Users can define their own tasks by providing new expression data and (or) new gene pair labels.
 
 
 
-># 7, Command lines for Trained model
+># 6, Command lines for Trained model
 
->>## 7.1 step1, users need to provide gene pair list;
+>>## 6.1 step1, users need to provide gene pair list;
 
 `gene_pair_list` is the list that contains gene pairs and their labels. format : `'GeneA GeneB ' or 'GeneA    GeneB     0'`
 such as `mmukegg_new_new_unique_rand_labelx_sy.txt` and `mmukegg_new_new_unique_rand_labelx.txt` in data folder.
@@ -182,12 +171,3 @@ It generate a NEPDF_data folder, and a series of data files containing `Nxdata_t
 It generates three cross_Validation folder whose name begins with `YYYYY`, in which `keras_cnn_trained_model_shallow.h5` is the trained model
 
 
-># 9 Attentions:
->>## Please read the readme very carefully and make sure that all files have correct paths, since users may have different computer environments.
->>## All command lines are just used for demo. If you want to run the real data, plz replace "mmukegg_new_new_unique_rand_labelx_num_sy.txt" with "mmukegg_new_new_unique_rand_labelx_num.txt", and replace all "9" with 3057, which is the real number of seperations.
-
->>## When label list is very large, say more than 100,000 gene pairs, we recommend users to feed a series of small  number_of_data_parts_divided to run the NEPDF generation in parallel.
->>## We are exploring new tasks and new datatypes for CNNC, to be continued...
-
-
-# Enjoy our CNNC!!
